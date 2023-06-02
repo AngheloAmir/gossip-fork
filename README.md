@@ -15,19 +15,19 @@ Once all packages are installed, use command: npm run start
 Use: npm run build to start building your project. One to note that, modifiy the generated
 index.html code to:
 
-``javascript
+```javascript
 <script>
     window.routerBase = `the exact location of the index.html in the server`;
 </script>
-``
+```
 
 For example, if the index html is at: localhost:3000/dist/index.html, then:
 
-``javascript
+```javascript
 <script>
     //needs to be properly set or the app will display a blank page
     window.routerBase = `dist/index.html`;
     //or this:
     window.routerBase = `dist/`;
 </script>
-``
+```
