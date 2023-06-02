@@ -1,4 +1,4 @@
-# Modified Gossip 1.0 From https://github.com/gossip-ink/gossip
+# Modified Gossip 1.0 From gossip-ink/gossip
 Please visit the https://github.com/gossip-ink/gossip for more information about this project.
 
 # Notice
