@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
 .umi
-dist
 node_modules
+dist/
+!_umi/dist/

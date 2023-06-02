@@ -156,9 +156,12 @@ export default {
     },
     // 创建新的 ppt
     createNewFile(state) {
-      const { lang, locales } = state;
-      const file = createFile(lang, locales);
-      return { ...file, lang, locales };
+      if( confirm('Create New Slides?') ) {
+        const { lang, locales } = state;
+        const file = createFile(lang, locales);
+        return { ...file, lang, locales };
+      }
+      return state;
     },
 
     createHelp(state) {

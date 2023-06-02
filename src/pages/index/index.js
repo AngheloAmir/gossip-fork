@@ -38,7 +38,7 @@ export default connect(
     },
     mainContent: {
       height: contentHeight,
-      width: width - 600,
+      width: width - 580,
     },
     structure: {
       height: structureHeight,

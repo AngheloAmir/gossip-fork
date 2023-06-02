@@ -19,6 +19,24 @@ export default connect(({ global }) => ({
   return (
     <div className={classNames.container} style={styles.container}>
       <header className={classNames.header} style={styles.header}>
+      </header>
+      <div className={classNames.content} style={styles.content}>
+        <div className={classNames.title}>
+          <h1 className={classNames.big}>Gossip</h1>
+          <p>{locales.HEADER_INFO[lang]}</p>
+          <p>A fork project from: https://github.com/gossip-ink/gossip</p>
+          <p>Please use a bigger screen</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+/*
+return (
+    <div className={classNames.container} style={styles.container}>
+      <header className={classNames.header} style={styles.header}>
         <div className={classNames.logo}>Gossip</div>
         <Icon
           className={classNames.icon}
@@ -46,4 +64,4 @@ export default connect(({ global }) => ({
       </div>
     </div>
   );
-});
+*/

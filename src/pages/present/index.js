@@ -2,7 +2,7 @@ import classNames from "./index.css";
 import { connect } from "dva";
 import { useEffect } from "react";
 import useWindowSize from "react-use/lib/useWindowSize";
-import router from "umi/router";
+import { BrowserRouter, useHistory } from "react-router-dom";
 
 import Slide from "../../components/Slide";
 import Impress from "../../components/Impress";
@@ -66,41 +66,43 @@ export default connect((state) => ({
 
   const slides = overview(nodes.map(attr).map(actual));
 
-  // 监听事件
+  const history = useHistory();
   useEffect(() => {
     const back = (e) => {
-      if (e.keyCode === 27) router.push("/");
+      if (e.keyCode === 27) history.push("/");
       e.preventDefault();
     };
     window.addEventListener("keydown", back);
     return () => window.removeEventListener("keydown", back);
-  });
+  }, [history]);
 
   return (
-    <div
-      className={classNames.container}
-      style={{ height, width, background: value ? value : "white" }}
-    >
-      <Impress overviewOpen={true} slides={slides} selectedId={selectedId}>
-        {slides.map(({ x, y, z, rotate, content, scale }) => (
-          <Step
-            x={x}
-            y={y}
-            z={z}
-            scale={scale}
-            rotate={rotate}
-            key={content.id}
-          >
-            <div
-              style={{
-                transform: `scale(${slideScale})`,
-              }}
+    <BrowserRouter>
+      <div
+        className={classNames.container}
+        style={{ height, width, background: value ? value : "white" }}
+      >
+        <Impress overviewOpen={true} slides={slides} selectedId={selectedId}>
+          {slides.map(({ x, y, z, rotate, content, scale }) => (
+            <Step
+              x={x}
+              y={y}
+              z={z}
+              scale={scale}
+              rotate={rotate}
+              key={content.id}
             >
-              <Slide content={content} hasBorder={false} />
-            </div>
-          </Step>
-        ))}
-      </Impress>
-    </div>
+              <div
+                style={{
+                  transform: `scale(${slideScale})`,
+                }}
+              >
+                <Slide content={content} hasBorder={false} />
+              </div>
+            </Step>
+          ))}
+        </Impress>
+      </div>
+    </BrowserRouter>
   );
 });

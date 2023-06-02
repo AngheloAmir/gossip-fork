@@ -33,7 +33,6 @@ export default connect(
     return newData !== oldData;
   }
 
-  // 在离开或者刷新页面之前提醒用户保存
   function handleBeforeUnLoad(e) {
     if (width <= 700) return;
     if (!hasChange()) return;
@@ -57,9 +56,9 @@ export default connect(
           okText={locales.LEARN[lang]}
           cancelText={locales.CHECK_AROUND[lang]}
           onOk={() => {
-            window.open(
-              "https://www.yuque.com/docs/share/5aef3b0a-28af-4c56-9967-217a7f02c70a?#"
-            );
+            //window.open(
+            //</div>  "https://www.yuque.com/docs/share/5aef3b0a-28af-4c56-9967-217a7f02c70a?#"
+            //);
             setPop(false);
           }}
           onCancel={() => setPop(false)}
