@@ -261,7 +261,7 @@ export default function({
         hasIcon={hasIcon}
       />
     ),
-    image: <MyImage value={value} onChange={onChange} value={value} />,
+    image: <MyImage value={value} onChange={onChange} />,
   };
   
   const boxByType = {

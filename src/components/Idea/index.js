@@ -57,7 +57,6 @@ export default connect(
       className={classNames.container}
       onMouseLeave={() => setEnter(false)}
       onMouseEnter={() => setEnter(true)}
-      onMouseLeave={() => setEnter(false)}
       onMouseOver={() => !enter && setEnter(true)}
     >
       <div className={classNames.box} style={styles.box}>

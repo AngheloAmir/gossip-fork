@@ -17,7 +17,6 @@
   },
   "scripts": {
     "start": "umi dev",
-    "build": "umi build",
-    "deploy": "umi build && gh-pages -d dist && gh-pages -d dist -b master -o gitee"
+    "build": "umi build"
   }
 }
